@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -10,8 +11,21 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
-        Mutation: {
+    },
+    Mutation: {
+        login: async (parent, args, context) => {
+            const user = await User.findOne({ email: args.email });
+            if (!user) {
+                throw new AuthenticationError('Not logged in');
+            }
 
+            const correctPw = await user.isCorrectPassword(body.password);
+
+            if (!correctPw) {
+                throw new AuthenticationError('Not logged in');
+            }
+            const token = signToken(user);
+            return { token, user };
         }
     }
-}
+};

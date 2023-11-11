@@ -35,15 +35,35 @@ class AuthService {
   login(idToken) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
+    // Authorization header for GraphQL requests
+    // this.setAuthHeader(idToken);
     window.location.assign('/');
   }
 
   logout() {
     // Clear user token and profile data from localStorage
     localStorage.removeItem('id_token');
+    // Remove authorization header for GraphQL requests
+    // this.removeAuthHeadder();
     // this will reload the page and reset the state of the application
     window.location.assign('/');
   }
+
+
+  // Set authorization header for Graph QL requests
+  // setAuthHeader(token) {
+  //   const headers = new Headers();
+  //   headers.append('Authorization', `Bearer ${token}`);
+  //   // set headers globally for all requests
+  //   fetchOptions.headers = headers;
+  // }
+
+
+  // // remove the authorization header for GraphQL requests
+  // removeAuthHeadder() {
+  //   // remove authorzatio header
+  //   fetchOptions.headers.delete('Authorization');
+  // }
 }
 
 export default new AuthService();
