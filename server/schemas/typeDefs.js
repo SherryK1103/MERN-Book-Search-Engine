@@ -9,6 +9,15 @@ type Auth {
     user: User
 }
 
+type Book {
+    authors: [String]
+    description: String!
+    bookId: String!
+    image: String
+    link: String
+    title: String!
+}
+
 input BookInput {
     authors: [String]
     description: String!
