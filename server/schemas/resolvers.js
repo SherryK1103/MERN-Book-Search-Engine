@@ -20,13 +20,14 @@ const resolvers = {
             return { token, user };
         },
 
-        login: async (parent, { email, password }) => {
+        loginUser: async (parent, { email, password }) => {
+            console.log(email, password);
             const user = await User.findOne({ email });
             if (!user) {
                 throw new AuthenticationError('Not logged in');
             }
 
-            const correctPw = await user.isCorrectPassword(body.password);
+            const correctPw = await user.isCorrectPassword(password);
 
             if (!correctPw) {
                 throw new AuthenticationError('Not logged in');
