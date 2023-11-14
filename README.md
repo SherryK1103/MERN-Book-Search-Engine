@@ -17,10 +17,10 @@ A dynamic book search engine built on the MERN (MongoDB, Express.js, React, Node
 
 ## Technologies Used <a name="technology"></a>
 
-ReactJS - Used to build elements of page including header, nav-bar, core content which changes based on user interaction, and footer
-JavaScript - Used to create seeds, routes, and models
-HTML - Used within handlebars for frontend of site
-CSS - Used to create look and reactivity of site
+MongoDB - A NoSQL database system that is used to store, manage, and retrieve data in a flexible, schema-free format, particularly well-suited for applications with evolving and unpredictable data structures.
+ExpressJS - A web application framework for Node.js that simplifies the process of building scalable and robust web applications by providing a set of features and tools for handling HTTP requests and responses.
+ReactJS - Used to build elements of page including header, nav-bar, core content which changes based on user interaction, and footer.
+NodeJS - A JavaScript runtime that allows developers to execute server-side code, enabling the development of scalable and efficient network applications.
 
 ## Installation <a name="installation"></a>
 
